@@ -218,12 +218,12 @@ class FPSTracker:
         fps = 1 / self.dt_ema * self.steps_since_last_print
         if self.n_envs > 0:
             self.total_fps = fps * self.n_envs
-            gs.logger.info(
-                f"Running at ~<{self.total_fps:,.2f}>~ FPS (~<{fps:.2f}>~ FPS per env, ~<{self.n_envs}>~ envs)."
-            )
+            # gs.logger.info(
+            #     f"Running at ~<{self.total_fps:,.2f}>~ FPS (~<{fps:.2f}>~ FPS per env, ~<{self.n_envs}>~ envs)."
+            # )
         else:
             self.total_fps = fps
-            gs.logger.info(f"Running at ~<{fps:.2f}>~ FPS.")
+            # gs.logger.info(f"Running at ~<{fps:.2f}>~ FPS.")
         self.last_time = current_time
         self.steps_since_last_print = 0
         return self.total_fps
